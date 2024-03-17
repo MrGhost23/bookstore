@@ -6,6 +6,11 @@ export type CartItem = {
   quantity: number;
 };
 
+export enum UserRole {
+  ADMIN = 'admin',
+  USER = 'user',
+}
+
 @Schema()
 export class User extends Document {
   @Prop()
@@ -28,6 +33,10 @@ export class User extends Document {
 
   @Prop({ default: [] })
   orders: string[];
+
+  
+  @Prop({ type: String, enum: UserRole, default: UserRole.USER })
+  role: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

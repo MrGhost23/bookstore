@@ -1,6 +1,6 @@
 // create-user.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty, IsString, IsArray, IsOptional, IsInt } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString, IsArray, IsOptional, IsInt, IsIn } from 'class-validator';
 
 export class CartItemDto {
   @IsString()
@@ -41,4 +41,9 @@ export class CreateUserDto {
   @IsArray()
   @IsOptional()
   orders: string[] = [];
+
+  @ApiProperty({ description: 'The role of the user (default is user)', example: 'user' })
+  @IsString()
+  @IsIn(['admin', 'user'])
+  role: string;
 }
