@@ -23,6 +23,9 @@ export class Book extends Document {
 
   @Prop({ type: Boolean, default: false })
   feature: boolean;
+
+  @Prop({ type: Number, default: 0, min: 0, max: 5 })
+  rating: number;
 }
 
 export const BookSchema = SchemaFactory.createForClass(Book);
