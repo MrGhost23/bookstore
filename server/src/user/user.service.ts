@@ -16,15 +16,15 @@ export class UserService {
 
     async findAll(): Promise<User[]> {
         return this.userModel.find().select('-password').exec();
-      }
+    }
 
-      async findOne(identifier: string): Promise<User | undefined> {
+    async findOne(identifier: string): Promise<User | undefined> {
         if (isEmail(identifier)) {
-          return this.userModel.findOne({ email: identifier }).select('-password');
+          return this.userModel.findOne({ email: identifier });
         } else {
-          return this.userModel.findById(identifier).select('-password');
+          return this.userModel.findById(identifier);
         }
-      }
+    }
 
     async update(id: string, updateUserDto: CreateUserDto): Promise<User> {
         return this.userModel.findByIdAndUpdate(id, updateUserDto, { new: true }).select('-password').exec();

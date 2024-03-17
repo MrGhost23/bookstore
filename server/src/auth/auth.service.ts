@@ -54,10 +54,13 @@ export class AuthService {
     }
   
     const foundUser = await this.userService.findOne(email);
+    
     if (!foundUser) {
       throw new UnauthorizedException('Invalid credentials');
     }
-  
+    if (!password || !foundUser || !foundUser.password) {
+      throw new UnauthorizedException('Invalid credentials');
+    }
     const passwordMatch = await bcrypt.compare(password, foundUser.password);
     if (!passwordMatch) {
       throw new UnauthorizedException('Invalid credentials');
