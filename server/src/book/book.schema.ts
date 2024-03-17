@@ -18,6 +18,9 @@ export class Book extends Document {
   @Prop({ type: String, required: true })
   description: string;
 
+  @Prop({ type: String, required: true })
+  image: string;
+
   @Prop({ type: Boolean, default: false })
   feature: boolean;
 }
