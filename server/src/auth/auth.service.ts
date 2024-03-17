@@ -67,6 +67,7 @@ export class AuthService {
     }
   
     const userObject = foundUser.toObject();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: _, ...userWithoutPassword } = userObject;
   
     const payload = { email: foundUser.email, sub: foundUser._id };
@@ -100,6 +101,7 @@ export class AuthService {
     const newUser = await this.userService.create(createUserDto);
 
     const userObject = newUser.toObject();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: _, ...userWithoutPassword } = userObject;
 
     const payload = { email: newUser.email, sub: newUser._id };
