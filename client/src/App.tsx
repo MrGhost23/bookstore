@@ -1,4 +1,14 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
 const App = () => {
-  return <div className="text-red-500">App</div>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<div>About</div>} />
+      </Routes>
+    </Router>
+  );
 };
 export default App;
