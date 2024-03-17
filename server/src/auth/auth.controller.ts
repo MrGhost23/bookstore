@@ -4,7 +4,9 @@ import { CreateUserDto } from 'src/user/dtos/create-user.dto';
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { LocalStrategy } from './local-auth.guard';
 import { LoginDto } from './dtos/login.dto';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Authantication')
 @Controller('auth')
 export class AuthController {
     constructor(private authService: AuthService) {}
@@ -22,6 +24,7 @@ export class AuthController {
     
     @UseGuards(JwtAuthGuard)
     @Post('validate')
+    @ApiOperation({ summary: 'Validate a user' })
     validate(@Req() req) {
       const userObject = req.user.toObject();
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

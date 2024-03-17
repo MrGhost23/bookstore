@@ -10,12 +10,10 @@ async function bootstrap() {
     envFilePath: '.env',
     isGlobal: true,
   });
-  
+
   const config = new DocumentBuilder()
-    .setTitle('My API')
-    .setDescription('The description of the API')
+    .setTitle('Bookstore API')
     .setVersion('1.0')
-    .addTag('myapi')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
