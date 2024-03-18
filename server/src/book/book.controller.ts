@@ -1,6 +1,8 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Req, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { CreateBookDto } from './dtos/create-book.dto';
 import { BookService } from './book.service';
+import { AuthGuard } from '@nestjs/passport';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @Controller('book')
 export class BookController {
@@ -13,7 +15,7 @@ export class BookController {
     }
   
     @Get()
-    findAll() {
+    findAll(@Req() req: Express.Request) {
       return this.bookService.findAll();
     }
   
@@ -23,11 +25,13 @@ export class BookController {
     }
   
     @Put(':id')
+    @UseGuards(JwtAuthGuard)
     update(@Param('id') id: string, @Body() updateBookDto: CreateBookDto) {
       return this.bookService.update(id, updateBookDto);
     }
   
     @Delete(':id')
+    @UseGuards(JwtAuthGuard)
     delete(@Param('id') id: string) {
       return this.bookService.delete(id);
     }
