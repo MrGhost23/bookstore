@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
+import toast from "react-hot-toast";
 
 const Ui = () => {
   return (
     <div>
-      <Button variant="outline">Click me</Button>
+      <Button variant="destructive" onClick={() => toast("this is toast")}>
+        Click me
+      </Button>
     </div>
   );
 };
