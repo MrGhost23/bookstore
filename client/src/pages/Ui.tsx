@@ -18,9 +18,9 @@ const Ui = () => {
         Click me
       </Button> */}
       <h1 className="font-bold text-black text-lg mb-4">Popular</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4 w-full">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4 w-full">
         {[...Array(6)].map((_, index) => (
-          <Card key={index} className="rounded-lg border w-[220px] shadow-lg">
+          <Card key={index} className="rounded-lg border w-full shadow-lg">
             <CardHeader className="mx-0 p-0 rounded-t-lg">
               <img
                 src="https://book-store-show.netlify.app/images/white-nights.jpg"
