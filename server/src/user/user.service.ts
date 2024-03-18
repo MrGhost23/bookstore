@@ -4,6 +4,7 @@ import { User } from './user.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { isEmail } from 'class-validator';
+import { UpdateUserDto } from './dtos/update-user.dto';
 
 @Injectable()
 export class UserService {
@@ -26,7 +27,7 @@ export class UserService {
         }
     }
 
-    async update(id: string, updateUserDto: CreateUserDto): Promise<User> {
+    async update(id: string, updateUserDto: UpdateUserDto): Promise<User> {
         return this.userModel.findByIdAndUpdate(id, updateUserDto, { new: true }).select('-password').exec();
     }
     
