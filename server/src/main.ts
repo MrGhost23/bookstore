@@ -11,6 +11,8 @@ async function bootstrap() {
     isGlobal: true,
   });
 
+  app.enableCors();
+
   const config = new DocumentBuilder()
     .setTitle('Bookstore API')
     .setVersion('1.0')
