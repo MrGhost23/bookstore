@@ -1,30 +1,35 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Home from "./pages/Home";
-import MaterLayOut from './components/ui/MasterLayOut/MasterLayOut';
 import { Provider } from "react-redux";
-import { store } from './store/store';
-import Register from "./components/ui/Register/Register";
+import { store } from "./store/store";
+import Login from "./pages/Login";
+import Layout from "./components/ui/Layout";
 
 const router = createBrowserRouter([
-  {path:'' , element: <MaterLayOut/> , children:[
-    {path:'/',element:<Home/>},
-    {path:'login' , element: <Register/>}
-    
-
-  ]}
-])
+  {
+    path: "",
+    element: <Layout />,
+    children: [
+      { path: "/", element: <Home /> },
+      {
+        path: "login",
+        element: <Login currentForm="login" />,
+      },
+      {
+        path: "register",
+        element: <Login currentForm="register" />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
   return (
-<>
-<Provider store={store}>
-     <RouterProvider router={router}>
-</RouterProvider>
- </Provider>
-</>
- 
+    <>
+      <Provider store={store}>
+        <RouterProvider router={router}></RouterProvider>
+      </Provider>
+    </>
   );
 };
 export default App;

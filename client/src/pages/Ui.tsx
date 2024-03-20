@@ -47,7 +47,7 @@ const Ui = () => {
       </Button> */}
       <h1 className="font-bold text-black text-xl mb-4">All Books</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4 w-full">
-        {books.map((book: Book, index) => (
+        {books.map((book: Book) => (
           <Card key={book._id} className="rounded-lg border w-full shadow-lg">
             <CardHeader className="mx-0 p-0 rounded-t-lg">
               <img
