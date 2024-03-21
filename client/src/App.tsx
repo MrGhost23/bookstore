@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import Login from "./pages/Login";
 import Layout from "./components/ui/Layout";
+import Ui from "./pages/Ui";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "/ui", element: <Ui /> },
       {
         path: "login",
         element: <Login currentForm="login" />,

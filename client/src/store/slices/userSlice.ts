@@ -1,5 +1,7 @@
 import api from '@/utils/api';
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { create } from 'domain';
+import { useSelector } from 'react-redux';
 
 interface User {
   firstName: string;
@@ -14,6 +16,7 @@ interface User {
 interface UserState {
   user: User | null;
   error: string | null;
+  loading: boolean;
 }
 
 interface LoginData {
@@ -28,7 +31,8 @@ interface RegisterData {
   password: string;
 }
 
-const initialState: UserState = { user: null, error: null };
+const initialState: UserState = { user: null, error: null, loading: false };
+
 
 export const loginUser = createAsyncThunk(
     'user/login',
@@ -42,6 +46,10 @@ export const loginUser = createAsyncThunk(
       }
     }
   );
+
+
+
+
 
   export const registerUser = createAsyncThunk(
     'user/register',
@@ -67,17 +75,26 @@ const userSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(loginUser.fulfilled, (state, action) => {
+              console.log(action.payload)
                 state.user = action.payload.user;
+                state.loading = false;
                 state.error = null;
+            })
+            .addCase(loginUser.pending, (state) => {
+                state.loading = true;
             })
             .addCase(loginUser.rejected, (state, action) => {
                 state.user = null;
                 state.error = action.payload as string;
+                state.loading = false;
             })
             .addCase(registerUser.fulfilled, (state, action) => {
                 state.user = action.payload.user;
                 state.error = null;
             })
+            .addCase(registerUser.pending, (state) => {
+              state.loading = true;
+          })
             .addCase(registerUser.rejected, (state, action) => {
                 state.user = null;
                 state.error = action.payload as string;
@@ -86,5 +103,8 @@ const userSlice = createSlice({
 });
 
 export const { setUser } = userSlice.actions;
+
+
 export const selectUser = (state: { user: UserState }) => state.user.user;
+
 export default userSlice.reducer;

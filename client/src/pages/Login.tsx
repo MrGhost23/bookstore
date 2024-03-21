@@ -10,14 +10,17 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { loginUser, registerUser } from "@/store/slices/userSlice";
-import { AppDispatch } from "@/store/store";
+import { AppDispatch, RootState } from "@/store/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 const Login = ({ currentForm }) => {
+  const user = useSelector((state: RootState) => state.user.user);
+  const loading = useSelector((state: RootState) => state.user.loading);
+
   type FormValues =
     | z.infer<typeof loginSchema>
     | z.infer<typeof registerSchema>;
@@ -118,7 +121,11 @@ const Login = ({ currentForm }) => {
                           alt="logo"
                         />
                         <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
-                          Welcome to Eqraa
+                          Welcome to Eqraa,{" "}
+                          {user
+                            ? user.firstName + " " + user.lastName
+                            : "Guest"}
+                          {loading && "Loading..."}
                         </h4>
                       </div>
                       {currentForm === "login" ? (

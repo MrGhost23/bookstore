@@ -12,33 +12,26 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import useAxios from "@/hooks/useAxios";
 import { useEffect } from "react";
 import { Book } from "@/types/BookType";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/store/store";
+import { fetchBook } from "@/store/slices/bookSlice";
 
 const Ui = () => {
-  const {
-    data: books,
-    loading,
-    error,
-    runAxios,
-  } = useAxios({
-    url: "http://localhost:5000/book",
-  });
-  useEffect(() => {
-    runAxios();
-  }, [runAxios]);
+  // const {
+  //   data: books,
+  //   loading,
+  //   error,
+  //   runAxios,
+  // } = useAxios({
+  //   url: "http://localhost:5000/book",
+  // });
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const books = useSelector((state: RootState) => state.book.books);
 
-  if (error) {
-    return <div>Error...</div>;
-  }
+  const dispatch: AppDispatch = useDispatch();
 
-  if (!books) {
-    return <div>No data...</div>;
-  }
-
-  console.log(books);
+  // useEffect(() => {
+  // }, []);
 
   return (
     <div className="px-8 py-4">
@@ -46,6 +39,7 @@ const Ui = () => {
         Click me
       </Button> */}
       <h1 className="font-bold text-black text-xl mb-4">All Books</h1>
+      <Button onClick={() => dispatch(fetchBook())}>Click Me</Button>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4 w-full">
         {books.map((book: Book) => (
           <Card key={book._id} className="rounded-lg border w-full shadow-lg">
