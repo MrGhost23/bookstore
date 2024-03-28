@@ -1,7 +1,7 @@
 import api from '@/utils/api';
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { create } from 'domain';
-import { useSelector } from 'react-redux';
+// import { create } from 'domain';
+// import { useSelector } from 'react-redux';
 
 interface User {
   firstName: string;

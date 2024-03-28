@@ -17,6 +17,7 @@ import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
+import logo from './../Assets/img/Picsart_24-03-23_00-03-06-130.png'
 const Login = ({ currentForm }) => {
   const user = useSelector((state: RootState) => state.user.user);
   const loading = useSelector((state: RootState) => state.user.loading);
@@ -105,7 +106,7 @@ const Login = ({ currentForm }) => {
   }
 
   return (
-    <div className="h-[85vh] flex items-center justify-center w-full">
+    <div className="h-[100vh] flex items-center justify-center w-full">
       <section className="h-full">
         <div className="container h-full p-10">
           <div className="flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
@@ -116,8 +117,8 @@ const Login = ({ currentForm }) => {
                     <div className="md:mx-6 md:p-12">
                       <div className="text-center">
                         <img
-                          className="mx-auto w-48"
-                          src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                          className="mx-auto w-40"
+                          src={logo}
                           alt="logo"
                         />
                         <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
