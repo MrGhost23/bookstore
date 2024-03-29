@@ -1,0 +1,17 @@
+.embla {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+  }
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  .embla__slide {
+    flex: 0 0 50%; /* Slide covers 50% of the viewport */
+    min-width: 0;
+  }

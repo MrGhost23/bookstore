@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBook } from '@/store/slices/bookSlice';
 import bookimg from '../Assets/img/Picsart_24-03-29_03-07-07-179.png'
+import CategorySlider from "@/components/categorySlider/CategorySlider";
+import BooksCard from "@/components/booksCard/BooksCard";
 
 const Home = () => {
 
@@ -29,7 +31,15 @@ const Home = () => {
       <img src={bookimg} className="h-96" alt="book img" />
     </div>
   </div>
+  </div>
 
+   <div className="flex justify-center align-middle my-16">
+  
+   {/* <CategorySlider/> */}
+   </div>
+
+  <div className="my-16">
+    <BooksCard/>
   </div>
   </>;
 };
