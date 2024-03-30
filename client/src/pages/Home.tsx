@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBook } from '@/store/slices/bookSlice';
 import bookimg from '../Assets/img/Picsart_24-03-29_03-07-07-179.png'
-import CategorySlider from "@/components/categorySlider/CategorySlider";
 import BooksCard from "@/components/booksCard/BooksCard";
+import BestSeller from "@/components/Best Seller/BestSeller";
 
 const Home = () => {
 
@@ -40,6 +40,10 @@ const Home = () => {
 
   <div className="my-16">
     <BooksCard/>
+  </div>
+
+  <div className="my-16">
+    <BestSeller/>
   </div>
   </>;
 };
