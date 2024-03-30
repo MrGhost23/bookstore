@@ -1,9 +1,10 @@
-
 const Navbar = () => {
   return (
     <header className="bg-white">
-      <div className="mx-auto px-8 py-1 flex items-center">
-        <div className="mr-auto f md:w-48 flex-shrink-0 text-xl font-bold "><h3>Book Store</h3></div>
+      <div className="mx-auto px-8 py-4 flex items-center">
+        <div className="mr-auto md:w-48 flex-shrink-0 text-xl font-bold ">
+          <h3>Book Store</h3>
+        </div>
 
         <div className="w-full m-auto max-w-xs xl:max-w-lg 2xl:max-w-2xl bg-gray-100 rounded-md hidden xl:flex items-center">
           <select
@@ -108,7 +109,6 @@ const Navbar = () => {
           <span>$2,650,59</span>
         </div>
       </div>
-
       <hr />
     </header>
   );
