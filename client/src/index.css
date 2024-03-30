@@ -2,7 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-color: rgb(234, 88, 12);
+    --secondary-color: #6c757d;
+    --font-size: 16px;
+  }
+
+
+  button{
+    background-color: rgb(194 65 12) !important;
+    width: 100%;
+    color: rgb(255 255 255) !important;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    padding-inline: 1.25rem;
+    padding-block: 0.625rem;
+    margin-inline-end: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  button:hover{
+    background-color: rgb(154 52 18) !important;
+  }
+
 h1, h2, h3, h4, h5, h6 {
      font-size: 35px; 
     font-weight: 700; 
 }
+
+.bookName{
+    color: rgb(0 0 0);
+    font-weight: 700 ;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.125rem/* 18px */ ;
+    line-height: 1.75rem/* 28px */ ;
+    margin-top: 0.25rem/* 4px */ ;
+    margin-bottom: 0.25rem/* 4px */ ;
+}
+
+.price{
+    color: rgb(0 0 0);
+    font-weight: 700 ;
+    font-size: 1.125rem/* 18px */ ;
+    line-height: 1.75rem/* 28px */ ;
+    margin-top: 0.25rem/* 4px */ ;
+    margin-bottom: 0.25rem/* 4px */ ;
+}
+

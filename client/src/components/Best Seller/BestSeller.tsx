@@ -39,7 +39,7 @@ const BestSeller = ()=>{
                             <CardTitle><img src={img} className="rounded-t-xl" alt="" /></CardTitle>
                             <CardDescription>
                                 <div className="flex justify-between align-middle">
-                                    <p className=" text-black font-bold text-lg my-1">Summer sons</p>
+                                    <p className="bookName">Summer sons</p>
                                     <svg
                                         viewBox="0 0 1024 1024"
                                         fill="currentColor"
@@ -68,11 +68,11 @@ const BestSeller = ()=>{
                                 </div>
 
                                 <div >
-                                    <p className="text-black font-bold text-lg my-1">$9.90</p>
+                                    <p className="price">$9.90</p>
                             
                                 </div>
                                 <div className="">
-                                    <button type="button" className="text-white w-full bg-orange-700  hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800">Add to basket</button>
+                                    <button type="button">Add to basket</button>
                                 </div>
                             </CardDescription>
                         </CardHeader>

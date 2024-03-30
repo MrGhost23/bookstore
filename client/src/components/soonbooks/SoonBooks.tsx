@@ -21,8 +21,8 @@ const SoonBoks = () => {
         <div className="container mx-auto">
             <div className="flex  justify-between align-middle" >
                 <p className="bookscard mb-3 text-[24px] translate-y-1">Soon</p>
-                <div className="flex justify-center align-middle text-orange-600 text-center mb-3 translate-y-3" style={{ cursor: 'pointer' }}>
-                    <p className="">See more</p> <svg
+                <div className="flex justify-center align-middle text-orange-600 text-center mb-3 translate-y-5" style={{ cursor: 'pointer' }}>
+                    <p>See more</p> <svg
                         className="translate-y-1"
                         viewBox="0 0 1024 1024"
                         fill="currentColor"
@@ -41,7 +41,7 @@ const SoonBoks = () => {
                             <CardTitle><img src={img} className="rounded-t-xl" alt="" /></CardTitle>
                             <CardDescription>
                                 <div className="flex justify-between align-middle">
-                                    <p className=" text-black font-bold text-lg my-1">First Encounter</p>
+                                    <p className="bookName">First Encounter</p>
                                     <svg
                                         viewBox="0 0 1024 1024"
                                         fill="currentColor"
@@ -70,11 +70,11 @@ const SoonBoks = () => {
                                 </div>
 
                                 <div >
-                                    <p className="text-black font-bold text-lg my-1">$12.50</p>
+                                    <p className="price">$12.50</p>
 
                                 </div>
                                 <div className="">
-                                    <button type="button" className="text-white w-full bg-orange-700  hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800">Add to basket</button>
+                                    <button type="button">Add to basket</button>
                                 </div>
                             </CardDescription>
                         </CardHeader>
