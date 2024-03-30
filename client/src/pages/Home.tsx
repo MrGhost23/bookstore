@@ -5,6 +5,7 @@ import { fetchBook } from '@/store/slices/bookSlice';
 import bookimg from '../Assets/img/Picsart_24-03-29_03-07-07-179.png'
 import BooksCard from "@/components/booksCard/BooksCard";
 import BestSeller from "@/components/Best Seller/BestSeller";
+import SoonBoks from "@/components/soonbooks/SoonBooks";
 
 const Home = () => {
 
@@ -44,6 +45,10 @@ const Home = () => {
 
   <div className="my-16">
     <BestSeller/>
+  </div>
+
+  <div className="my-16">
+    <SoonBoks/>
   </div>
   </>;
 };
