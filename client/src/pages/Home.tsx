@@ -9,6 +9,7 @@ import SoonBoks from "@/components/soonbooks/SoonBooks";
 // import BookDetails from "@/components/BookDetails/BookDetails";
 import BookDetailsTest from "@/components/BookDetails/BookDetailsTest";
 import MyCart from "@/components/cart component/MyCart";
+import WishList from "@/components/wish list/WishList";
 
 const Home = () => {
   const books = useSelector((state: RootState) => state.book.books);
@@ -65,6 +66,10 @@ const Home = () => {
       <div className="my-20">
         <MyCart/>
       </div>
+      <div className="my-20">
+      <WishList/>
+      </div>
+    
     </>
   );
 };
