@@ -17,7 +17,7 @@ import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
-import logo from './../Assets/img/Picsart_24-03-23_00-03-06-130.png'
+import logo from './../assets/img/Picsart_24-03-23_00-03-06-130.png'
 const Login = ({ currentForm }) => {
   const user = useSelector((state: RootState) => state.user.user);
   const loading = useSelector((state: RootState) => state.user.loading);
