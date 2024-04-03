@@ -7,7 +7,7 @@ import BooksCard from "@/components/HomeCards/BooksCard";
 import BestSeller from "@/components/HomeCards/BestSeller";
 import SoonBoks from "@/components/HomeCards/SoonBooks";
 // import BookDetails from "@/components/BookDetails/BookDetails";
-import MyCart from "@/components/cart component/MyCart";
+import MyCart from "@/components/ShoppingCart/MyCart";
 import WishList from "@/components/WishList";
 import BookDetailsTest from "@/components/BookDetails/BookDetailsTest";
 
