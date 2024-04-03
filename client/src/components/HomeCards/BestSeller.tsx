@@ -4,7 +4,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import img from "../../Assets/img/The new science fiction and fantasy books to read this summer.jpeg";
+import img from "../../assets/img/The new science fiction and fantasy books to read this summer.jpeg";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 import { Button } from "../ui/button";

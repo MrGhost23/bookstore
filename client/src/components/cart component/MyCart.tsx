@@ -1,4 +1,4 @@
-import img from "../../Assets/img/The 7 best Harry Potter covers of all time - The Daily Universe.jpeg";
+import img from "../../assets/img/The 7 best Harry Potter covers of all time - The Daily Universe.jpeg";
 import { Button } from "../ui/button";
 
 const MyCart = () => {

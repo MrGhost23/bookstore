@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
-import img from "../../Assets/img/The 7 best Harry Potter covers of all time - The Daily Universe.jpeg";
+import img from "../../assets/img/The 7 best Harry Potter covers of all time - The Daily Universe.jpeg";
 import { useState } from "react";
 
 const WishList = () => {

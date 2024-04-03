@@ -2,13 +2,13 @@ import { AppDispatch, RootState } from "@/store/store";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBook } from "@/store/slices/bookSlice";
-import bookimg from "../Assets/img/Picsart_24-03-29_03-07-07-179.png";
-import BooksCard from "@/components/booksCard/BooksCard";
-import BestSeller from "@/components/Best Seller/BestSeller";
-import SoonBoks from "@/components/soonbooks/SoonBooks";
+import bookimg from "../assets/img/Picsart_24-03-29_03-07-07-179.png";
+import BooksCard from "@/components/HomeCards/BooksCard";
+import BestSeller from "@/components/HomeCards/BestSeller";
+import SoonBoks from "@/components/HomeCards/SoonBooks";
 // import BookDetails from "@/components/BookDetails/BookDetails";
 import MyCart from "@/components/cart component/MyCart";
-import WishList from "@/components/wish list/WishList";
+import WishList from "@/components/WishList";
 import BookDetailsTest from "@/components/BookDetails/BookDetailsTest";
 
 const Home = () => {
