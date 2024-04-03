@@ -59,7 +59,7 @@ const Navbar = () => {
             </li>
             <li className="ml-2 lg:ml-4 relative inline-block">
               <a className="" href="">
-                <div className="absolute -top-1 right-0 z-10 bg-orange-400 text-xs font-bold px-1 py-0.5 rounded-sm">
+                <div className="absolute -top-1 right-0 z-10 bg-secondary text-xs font-bold px-1 py-0.5 rounded-sm">
                   3
                 </div>
                 <svg
@@ -81,7 +81,7 @@ const Navbar = () => {
             </li>
             <li className="ml-2 lg:ml-4 relative inline-block">
               <a className="" href="">
-                <div className="absolute -top-1 right-0 z-10 bg-orange-400 text-xs font-bold px-1 py-0.5 rounded-sm">
+                <div className="absolute -top-1 right-0 z-10 bg-secondary text-xs font-bold px-1 py-0.5 rounded-sm">
                   12
                 </div>
                 <svg

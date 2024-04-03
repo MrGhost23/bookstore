@@ -7,6 +7,7 @@ import {
 import img from "../../Assets/img/First Encounter (Ascension Wars Book 1).jpeg";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 const SoonBoks = () => {
   const [rating, setRating] = useState(0);
@@ -16,11 +17,11 @@ const SoonBoks = () => {
   };
 
   return (
-    <div className="container mx-auto">
-      <div className="flex  justify-between align-middle">
-        <p className="bookscard mb-3 text-[24px] translate-y-1">Soon</p>
+    <div className="px-12 mx-auto">
+      <div className="flex justify-between align-middle mb-4">
+        <p className="booksline mb-3 text-[24px] translate-y-1">Soon</p>
         <div
-          className="flex justify-center align-middle text-sky-600 text-center mb-3 translate-y-5"
+          className="flex justify-center gap-1 align-middle text-sky-600 text-center mb-3 translate-y-3"
           style={{ cursor: "pointer" }}
         >
           <p>See more</p>{" "}
@@ -35,9 +36,9 @@ const SoonBoks = () => {
           </svg>
         </div>
       </div>
-      <div className="grid grid-cols-1 col-start-3 col-span-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 ">
         {Array.from({ length: 6 }, (_, index) => (
-          <Card className=" w-[210px] " key={index}>
+          <Card className=" " key={index}>
             <CardHeader className="p-1">
               <CardTitle>
                 <img src={img} className="rounded-t-xl" alt="" />
@@ -69,7 +70,7 @@ const SoonBoks = () => {
                     <FaStar
                       key={index}
                       onClick={() => handleClick(index)}
-                      color={index < rating ? "#FF8C00" : "gray"}
+                      color={index < rating ? "#0ea5e9" : "gray"}
                       size={16}
                       style={{ cursor: "pointer" }}
                     />
@@ -80,7 +81,7 @@ const SoonBoks = () => {
                   <p className="title">$12.50</p>
                 </div>
                 <div className="">
-                  <button type="button">Add to basket</button>
+                <Button className="text-white full bg-sky-700  hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-sky-600 dark:hover:bg-sky-700 focus:outline-none dark:focus:ring-sky-800">Add to basket</Button>
                 </div>
               </CardDescription>
             </CardHeader>
