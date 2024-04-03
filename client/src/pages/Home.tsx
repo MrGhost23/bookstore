@@ -7,9 +7,9 @@ import BooksCard from "@/components/booksCard/BooksCard";
 import BestSeller from "@/components/Best Seller/BestSeller";
 import SoonBoks from "@/components/soonbooks/SoonBooks";
 // import BookDetails from "@/components/BookDetails/BookDetails";
-import BookDetailsTest from "@/components/BookDetails/BookDetailsTest";
 import MyCart from "@/components/cart component/MyCart";
 import WishList from "@/components/wish list/WishList";
+import BookDetailsTest from "@/components/BookDetails/BookDetailsTest";
 
 const Home = () => {
   const books = useSelector((state: RootState) => state.book.books);
@@ -49,19 +49,18 @@ const Home = () => {
 
       <div className="my-16">
         <BooksCard />
-      </div>
-{/*       
+      </div>       
       <div className="my-16">
         <BestSeller />
       </div>
 
       <div className="my-16">
         <SoonBoks />
-      </div> */}
+      </div> 
 
-      {/* <div className="my-20">
+       <div className="my-20">
         <BookDetailsTest />
-      </div> */}
+      </div> 
 
       <div className="my-20">
         <MyCart/>
