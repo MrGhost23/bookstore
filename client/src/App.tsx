@@ -10,6 +10,7 @@ import WishList from "./components/WishList";
 import MyCart from "./components/ShoppingCart/MyCart";
 import Shop from "./components/Shop";
 import CheckOut from "./components/CheckOut";
+import BookDetailsTest from "./components/HomeCards/BookDetailsTest";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Shop />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/shop/:id",
+        element: (
+          <ProtectedRoute>
+            <BookDetailsTest />
           </ProtectedRoute>
         ),
       },
