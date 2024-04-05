@@ -16,12 +16,46 @@ const router = createBrowserRouter([
     path: "",
     element: <Layout />,
     children: [
-      { path: "/", element: <ProtectedRoute><Home /></ProtectedRoute>  },
-      { path: "/wishlist", element: <ProtectedRoute><WishList /></ProtectedRoute>  },
-      { path: "/cart", element: <ProtectedRoute><MyCart /></ProtectedRoute>  },
-      { path: "/shop", element: <ProtectedRoute><Shop /></ProtectedRoute>  },
-      { path: "/shop", element: <ProtectedRoute><Shop /></ProtectedRoute>  },
-      { path: "/checkout", element: <ProtectedRoute><CheckOut /></ProtectedRoute>  },
+      {
+        path: "/",
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/wishlist",
+        element: (
+          <ProtectedRoute>
+            <WishList />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <ProtectedRoute>
+            <MyCart />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/shop",
+        element: (
+          <ProtectedRoute>
+            <Shop />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/checkout",
+        element: (
+          <ProtectedRoute>
+            <CheckOut />
+          </ProtectedRoute>
+        ),
+      },
       { path: "/ui", element: <Ui /> },
       {
         path: "login",
