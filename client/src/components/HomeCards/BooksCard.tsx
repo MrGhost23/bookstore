@@ -10,8 +10,7 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
-const BooksCard = ({title,books}) => {
-
+const BooksCard = ({ title, books }) => {
   // const BooksData=[
   //   {title:"All Books" , books:data},
   //   {title:"Soon Books" , books:soonbooks},
@@ -80,7 +79,9 @@ const BooksCard = ({title,books}) => {
 
                 <p className="title">$7.90</p>
 
-                <Button className="text-white full bg-sky-700  hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-sky-600 dark:hover:bg-sky-700 focus:outline-none dark:focus:ring-sky-800">Add to basket</Button>
+                <Button className="text-white button full bg-sky-700  hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-sky-600 dark:hover:bg-sky-700 focus:outline-none dark:focus:ring-sky-800">
+                  Add to basket
+                </Button>
               </CardDescription>
             </CardHeader>
           </Card>
