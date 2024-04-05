@@ -73,6 +73,10 @@ const userSlice = createSlice({
         setUser: (state, action: PayloadAction<User | null>) => {
             state.user = action.payload;
         },
+        logout: (state) => {
+          state.user = null;
+          localStorage.removeItem('userToken');
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -104,7 +108,7 @@ const userSlice = createSlice({
     },
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, logout } = userSlice.actions;
 
 
 export const selectUser = (state: { user: UserState }) => state.user.user;
