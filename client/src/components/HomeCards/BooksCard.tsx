@@ -57,7 +57,7 @@ const BooksCard = ({ title, books }) => {
                     alt={book.title}
                   />
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="px-2">
                   <div className="flex justify-between align-middle">
                     <p className="title">{book.title}</p>
                     <svg
@@ -73,8 +73,8 @@ const BooksCard = ({ title, books }) => {
                   </div>
 
                   <div>
-                    <p>{book.author}</p>
-                    <p className="my-1">{book.description}</p>
+                    <p className="font-bold -my-2 mb-3">{book.author}</p>
+                    <p className="my-1 line-clamp-2 mb-4">{book.description}</p>
                   </div>
 
                   <div className="flex justify-start align-middle my-1">
