@@ -13,7 +13,8 @@ import BookDetailsTest from "@/components/HomeCards/BookDetailsTest";
 
 const Home = () => {
   const books = useSelector((state: RootState) => state.book.books);
-  console.log(books);
+  const loading = useSelector((state: RootState) => state.book.loading);
+  const error = useSelector((state: RootState) => state.book.error);
 
   const dispatch: AppDispatch = useDispatch();
 
@@ -48,8 +49,10 @@ const Home = () => {
       </div>
 
       <div className="my-16">
-        <BooksCard />
-      </div>       
+        {loading && <div>Loading...</div>}
+        {error && <div>{error}</div>}
+        {!loading && !error && <BooksCard title="All Books" books={books} />}
+      </div>
       {/* <div className="my-16">
         <BestSeller />
       </div>
@@ -57,18 +60,6 @@ const Home = () => {
       <div className="my-16">
         <SoonBoks />
       </div>  */}
-
-       <div className="my-20">
-        <BookDetailsTest />
-      </div> 
-
-      <div className="my-20">
-        <MyCart/>
-      </div>
-      <div className="my-20">
-      <WishList/>
-      </div>
-    
     </>
   );
 };
