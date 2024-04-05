@@ -5,13 +5,23 @@ import { store } from "./store/store";
 import Login from "./pages/Login";
 import Layout from "./components/ui/Layout";
 import Ui from "./pages/Ui";
+import ProtectedRoute from "./components/ProtectedRoute";
+import WishList from "./components/WishList";
+import MyCart from "./components/ShoppingCart/MyCart";
+import Shop from "./components/Shop";
+import CheckOut from "./components/CheckOut";
 
 const router = createBrowserRouter([
   {
     path: "",
     element: <Layout />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "/", element: <ProtectedRoute><Home /></ProtectedRoute>  },
+      { path: "/wishlist", element: <ProtectedRoute><WishList /></ProtectedRoute>  },
+      { path: "/cart", element: <ProtectedRoute><MyCart /></ProtectedRoute>  },
+      { path: "/shop", element: <ProtectedRoute><Shop /></ProtectedRoute>  },
+      { path: "/shop", element: <ProtectedRoute><Shop /></ProtectedRoute>  },
+      { path: "/checkout", element: <ProtectedRoute><CheckOut /></ProtectedRoute>  },
       { path: "/ui", element: <Ui /> },
       {
         path: "login",

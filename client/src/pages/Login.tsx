@@ -15,9 +15,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { z } from "zod";
-import logo from './../assets/img/Picsart_24-03-23_00-03-06-130.png'
+import img from "./../assets/img/Picsart_24-04-05_01-48-32-658.png";
+// import logo from './../assets/img/Beige Brown Minimalist Bookstore Logo (1).png'
 const Login = ({ currentForm }) => {
   const user = useSelector((state: RootState) => state.user.user);
   const loading = useSelector((state: RootState) => state.user.loading);
@@ -81,6 +82,7 @@ const Login = ({ currentForm }) => {
         success: (data) => {
           form.reset();
           console.log(data);
+          navigate("/");
           return `Logged in successfully, Welcome ${data.user.firstName}`;
         },
         error: (err) => err.message || "Error logging in",
@@ -108,19 +110,15 @@ const Login = ({ currentForm }) => {
   return (
     <div className="h-[100vh] flex items-center justify-center w-full">
       <section className="h-full">
-        <div className="container h-full p-10">
-          <div className="flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+        <div className="container h-full p-10 my-auto">
+          <div className="flex h-full flex-wrap items-center justify-center  my-auto  text-neutral-800 dark:text-neutral-200">
             <div className="w-full">
               <div className="block rounded-lg bg-white shadow-lg">
                 <div className="g-0 lg:flex lg:flex-wrap">
                   <div className="px-4 md:px-0 lg:w-6/12">
                     <div className="md:mx-6 md:p-12">
                       <div className="text-center">
-                        <img
-                          className="mx-auto w-40"
-                          src={logo}
-                          alt="logo"
-                        />
+                        <img className="mx-auto w-40" src={img} alt="logo" />
                         <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
                           Welcome to Eqraa,{" "}
                           {user
@@ -171,20 +169,16 @@ const Login = ({ currentForm }) => {
                             />
                             <Button
                               type="submit"
-                              className="w-full"
-                              style={{
-                                background:
-                                  "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
-                              }}
+                              className="w-full w-full button bg-primary hover:bg-darksky"
+                            
                             >
                               Login
                             </Button>
                             <FormDescription>
                               Don't have an account?{" "}
                               <Button
-                                variant="link"
                                 onClick={() => navigate("/register")}
-                                className="text-gray-700 -ml-3 hover:no-underline"
+                                className="w-full button bg-primary hover:bg-darksky"
                               >
                                 Sign up
                               </Button>
@@ -269,20 +263,15 @@ const Login = ({ currentForm }) => {
                             />
                             <Button
                               type="submit"
-                              className="w-full"
-                              style={{
-                                background:
-                                  "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
-                              }}
+                              className=" w-full button bg-primary hover:bg-darksky"
                             >
                               Register
                             </Button>
                             <FormDescription>
                               Already have an account?{" "}
                               <Button
-                                variant="link"
                                 onClick={() => navigate("/login")}
-                                className="text-gray-700 -ml-3 hover:no-underline"
+                                className="w-full button bg-primary hover:bg-darksky"
                               >
                                 Login
                               </Button>

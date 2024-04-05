@@ -10,7 +10,13 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
-const BooksCard = () => {
+const BooksCard = ({title,books}) => {
+
+  // const BooksData=[
+  //   {title:"All Books" , books:data},
+  //   {title:"Soon Books" , books:soonbooks},
+  //   {title:"Best Seller" , books:bestseller}
+  // ]
   const [rating, setRating] = useState(0);
 
   const handleClick = (index) => {

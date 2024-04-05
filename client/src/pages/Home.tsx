@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBook } from "@/store/slices/bookSlice";
 import bookimg from "../assets/img/Picsart_24-03-29_03-07-07-179.png";
 import BooksCard from "@/components/HomeCards/BooksCard";
-import BestSeller from "@/components/HomeCards/BestSeller";
-import SoonBoks from "@/components/HomeCards/SoonBooks";
+// import BestSeller from "@/components/HomeCards/BestSeller";
+// import SoonBoks from "@/components/HomeCards/SoonBooks";
 // import BookDetails from "@/components/BookDetails/BookDetails";
 import MyCart from "@/components/ShoppingCart/MyCart";
 import WishList from "@/components/WishList";
-import BookDetailsTest from "@/components/BookDetails/BookDetailsTest";
+import BookDetailsTest from "@/components/HomeCards/BookDetailsTest";
 
 const Home = () => {
   const books = useSelector((state: RootState) => state.book.books);
@@ -50,13 +50,13 @@ const Home = () => {
       <div className="my-16">
         <BooksCard />
       </div>       
-      <div className="my-16">
+      {/* <div className="my-16">
         <BestSeller />
       </div>
 
       <div className="my-16">
         <SoonBoks />
-      </div> 
+      </div>  */}
 
        <div className="my-20">
         <BookDetailsTest />
