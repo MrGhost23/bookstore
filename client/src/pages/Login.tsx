@@ -169,15 +169,16 @@ const Login = ({ currentForm }) => {
                             />
                             <Button
                               type="submit"
-                              className="w-full w-full button bg-primary hover:bg-darksky"
+                              className="w-full button bg-primary hover:bg-darksky"
                             >
                               Login
                             </Button>
                             <FormDescription>
                               Don't have an account?{" "}
                               <Button
+                                variant="link"
                                 onClick={() => navigate("/register")}
-                                className="w-full button bg-primary hover:bg-darksky"
+                                className="text-gray-700 -ml-3 hover:no-underline"
                               >
                                 Sign up
                               </Button>
@@ -269,10 +270,11 @@ const Login = ({ currentForm }) => {
                             <FormDescription>
                               Already have an account?{" "}
                               <Button
+                                variant="link"
                                 onClick={() => navigate("/login")}
-                                className="w-full button bg-primary hover:bg-darksky"
+                                className="text-gray-700 -ml-3 hover:no-underline"
                               >
-                                Login
+                                Sign In
                               </Button>
                             </FormDescription>
                           </form>
