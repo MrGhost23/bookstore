@@ -9,18 +9,19 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { loginUser, registerUser } from "@/store/slices/userSlice";
+import { loginUser, registerUser, selectUser } from "@/store/slices/userSlice";
 import { AppDispatch, RootState } from "@/store/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
-import img from "./../assets/img/Picsart_24-04-05_01-48-32-658.png";
+import img from "./../assets/img/logo.png";
+import { useEffect } from "react";
 // import logo from './../assets/img/Beige Brown Minimalist Bookstore Logo (1).png'
 const Login = ({ currentForm }) => {
-  const user = useSelector((state: RootState) => state.user.user);
+  const user = useSelector(selectUser);
   const loading = useSelector((state: RootState) => state.user.loading);
 
   type FormValues =
@@ -53,6 +54,12 @@ const Login = ({ currentForm }) => {
   });
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   const formSchema = currentForm === "login" ? loginSchema : registerSchema;
 
@@ -120,11 +127,13 @@ const Login = ({ currentForm }) => {
                       <div className="text-center">
                         <img className="mx-auto w-40" src={img} alt="logo" />
                         <h4 className="mb-12 mt-1 pb-1 text-xl font-semibold">
-                          Welcome to Eqraa,{" "}
-                          {user
-                            ? user.firstName + " " + user.lastName
-                            : "Guest"}
-                          {loading && "Loading..."}
+                          {loading
+                            ? "Loading..."
+                            : `Welcome to Eqraa, ${
+                                user
+                                  ? `${user.firstName} ${user.lastName}`
+                                  : "Guest"
+                              }`}
                         </h4>
                       </div>
                       {currentForm === "login" ? (
