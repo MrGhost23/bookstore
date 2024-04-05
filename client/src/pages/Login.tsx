@@ -170,7 +170,6 @@ const Login = ({ currentForm }) => {
                             <Button
                               type="submit"
                               className="w-full w-full button bg-primary hover:bg-darksky"
-                            
                             >
                               Login
                             </Button>
@@ -283,10 +282,9 @@ const Login = ({ currentForm }) => {
                   </div>
 
                   <div
-                    className="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-e-lg lg:rounded-bl-none"
+                    className="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-e-lg lg:rounded-bl-none bg-primary"
                     style={{
-                      background:
-                        "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
+                      background: "",
                     }}
                   >
                     <div className="px-4 py-6 text-white md:mx-6 md:p-12">
