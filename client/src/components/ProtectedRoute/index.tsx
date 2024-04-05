@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/store/store";
 import { setUser } from "@/store/slices/userSlice";
 import toast from "react-hot-toast";
+import api from "@/utils/api";
 
 const ProtectedRoute: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,8 +20,8 @@ const ProtectedRoute: React.FC<{ children: ReactNode }> = ({ children }) => {
       const token = localStorage.getItem("userToken");
       if (token) {
         try {
-          const response = await axios.post(
-            "http://localhost:5000/auth/validate",
+          const response = await api.post(
+            "/auth/validate",
             {},
             {
               headers: {
